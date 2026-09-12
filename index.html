@@ -363,6 +363,15 @@
             margin-bottom: 1rem;
             display: none;
         }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -498,15 +507,19 @@
         <section id="apply">
             <h2>Apply Now</h2>
             <p style="text-align: center; margin-bottom: 2rem; color: #666;">
-                Ready to join our team? Fill out the form below to submit your application. We'll review all applications and contact qualified candidates within 2-3 business days.
+                Ready to join our team? Fill out the form below to submit your application. All submissions will be sent directly to <strong>martinbadgerceo01@gmail.com</strong> and reviewed within 2-3 business days.
             </p>
 
             <div class="form-section">
                 <div id="successMessage" class="success-message">
-                    ✅ Application submitted successfully! We'll contact you within 2-3 business days.
+                    ✅ Application submitted successfully! We'll review your information and contact you within 2-3 business days.
                 </div>
 
-                <form id="applicationForm" onsubmit="handleSubmit(event)">
+                <div id="errorMessage" class="error-message">
+                    ❌ There was an error submitting your application. Please try again.
+                </div>
+
+                <form id="applicationForm" action="https://formspree.io/f/xnqepnnk" method="POST">
                     <!-- Personal Information -->
                     <div style="background: white; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem;">
                         <h4 style="color: #667eea; margin-bottom: 1rem;">Personal Information</h4>
@@ -582,7 +595,7 @@
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
                             <div class="form-group">
                                 <label for="ms-office">Microsoft Office (Word, Excel, Outlook) *</label>
-                                <select id="ms-office" name="ms-office" required>
+                                <select id="ms-office" name="Microsoft_Office_Proficiency" required>
                                     <option value="">-- Select --</option>
                                     <option value="1">1 - Beginner</option>
                                     <option value="2">2 - Basic</option>
@@ -593,7 +606,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="google-suite">Google Suite (Docs, Sheets, Gmail) *</label>
-                                <select id="google-suite" name="google-suite" required>
+                                <select id="google-suite" name="Google_Suite_Proficiency" required>
                                     <option value="">-- Select --</option>
                                     <option value="1">1 - Beginner</option>
                                     <option value="2">2 - Basic</option>
@@ -829,7 +842,7 @@
                     <span>+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Great question! You can email us with any questions before submitting your application. We're happy to clarify anything about the position, requirements, or process.</p>
+                    <p>Great question! You can email us at martinbadgerceo01@gmail.com with any questions before submitting your application. We're happy to clarify anything about the position, requirements, or process.</p>
                 </div>
             </div>
         </section>
@@ -847,17 +860,12 @@
                     
                     <div style="margin-bottom: 1.5rem;">
                         <p style="font-weight: 600; margin-bottom: 0.5rem;">📧 Email</p>
-                        <p><a href="mailto:admin@formassistantcare.com" style="color: #667eea; text-decoration: none;">admin@formassistantcare.com</a></p>
-                    </div>
-
-                    <div style="margin-bottom: 1.5rem;">
-                        <p style="font-weight: 600; margin-bottom: 0.5rem;">📱 Phone</p>
-                        <p><a href="tel:+1-555-0123" style="color: #667eea; text-decoration: none;">+1 (555) 0123</a></p>
+                        <p><a href="mailto:martinbadgerceo01@gmail.com" style="color: #667eea; text-decoration: none;">martinbadgerceo01@gmail.com</a></p>
                     </div>
 
                     <div>
                         <p style="font-weight: 600; margin-bottom: 0.5rem;">⏰ Response Time</p>
-                        <p>We typically respond to inquiries within 24 business hours.</p>
+                        <p>We typically respond to inquiries and applications within 2-3 business days.</p>
                     </div>
                 </div>
 
@@ -876,7 +884,7 @@
         <p style="margin-top: 1rem; font-size: 0.9rem;">
             <a href="#">Privacy Policy</a> | 
             <a href="#">Terms of Service</a> | 
-            <a href="#">Contact Us</a>
+            <a href="mailto:martinbadgerceo01@gmail.com">Contact Us</a>
         </p>
     </footer>
 
@@ -902,33 +910,6 @@
             // Toggle current FAQ
             answer.classList.toggle('show');
             icon.textContent = answer.classList.contains('show') ? '−' : '+';
-        }
-
-        // Handle Form Submission
-        function handleSubmit(event) {
-            event.preventDefault();
-
-            // Collect form data
-            const formData = new FormData(event.target);
-            const data = Object.fromEntries(formData);
-
-            // In a real application, you would send this to a server
-            // For now, we'll show a success message and log the data
-            console.log('Application Data:', data);
-
-            // Show success message
-            document.getElementById('successMessage').style.display = 'block';
-
-            // Reset form
-            event.target.reset();
-
-            // Scroll to success message
-            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
-
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                document.getElementById('successMessage').style.display = 'none';
-            }, 5000);
         }
     </script>
 </body>
