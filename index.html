@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrative Personal Assistant - Remote Jobs at $125/hr</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: #ff6b6b;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff5252;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Sections */
+        section {
+            background: white;
+            margin-bottom: 3rem;
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+            text-align: center;
+        }
+
+        h3 {
+            color: #764ba2;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Key Highlights */
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .highlight-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .highlight-card h4 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsibilities Grid */
+        .responsibilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .responsibility-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+        }
+
+        .responsibility-item h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Benefits Section */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-item {
+            background: #f0f4ff;
+            padding: 1.5rem;
+            border-radius: 5px;
+            text-align: center;
+            border: 2px solid #667eea;
+        }
+
+        .benefit-item h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .benefit-item p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Application Form Section */
+        .form-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: #f8f9fa;
+            padding: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: #667eea;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background: #e9ecef;
+        }
+
+        .faq-answer {
+            padding: 1rem;
+            background: white;
+            display: none;
+            color: #666;
+        }
+
+        .faq-answer.show {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .text-muted {
+            color: #999;
+        }
+
+        .highlight {
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <div class="logo">🎯 AssistantCare</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#position">Position</a></li>
+                <li><a href="#apply">Apply Now</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Administrative Personal Assistant</h1>
+        <p>Join Our Team at <span class="highlight">$125/Hour</span> | Remote | Flexible</p>
+        <div class="hero-buttons">
+            <button class="btn btn-primary" onclick="document.getElementById('apply').scrollIntoView({behavior: 'smooth'})">
+                Apply Now
+            </button>
+            <button class="btn btn-secondary" onclick="document.getElementById('position').scrollIntoView({behavior: 'smooth'})">
+                Learn More
+            </button>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Key Highlights -->
+        <section id="highlights">
+            <h2>Why Apply?</h2>
+            <div class="highlights">
+                <div class="highlight-card">
+                    <h4>💰 $125/Hour</h4>
+                    <p>Competitive hourly rate with benefits eligibility</p>
+                </div>
+                <div class="highlight-card">
+                    <h4>🏠 100% Remote</h4>
+                    <p>Work from home, school, or anywhere you choose</p>
+                </div>
+                <div class="highlight-card">
+                    <h4>⏰ Flexible Schedule</h4>
+                    <p>Part-time with hours that fit your life</p>
+                </div>
+                <div class="highlight-card">
+                    <h4>🎓 Perfect for Students</h4>
+                    <p>Build professional experience while studying</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Position Details -->
+        <section id="position">
+            <h2>About This Position</h2>
+            
+            <h3>📋 Job Overview</h3>
+            <p>We're seeking a highly organized and detail-oriented <strong>Administrative Personal Assistant</strong> to support an accomplished entrepreneur and investment professional. This is a flexible, remote position ideal for students and professionals seeking quality part-time work.</p>
+
+            <h3>🎯 Key Responsibilities</h3>
+            <div class="responsibilities">
+                <div class="responsibility-item">
+                    <h4>📅 Organization & Scheduling</h4>
+                    <p>Manage calendars, coordinate daily activities, and plan travel arrangements</p>
+                </div>
+                <div class="responsibility-item">
+                    <h4>💼 Account Management</h4>
+                    <p>Track accounts, maintain detailed records, and manage financial documentation</p>
+                </div>
+                <div class="responsibility-item">
+                    <h4>📧 Email & Communication</h4>
+                    <p>Organize emails, manage archives, handle correspondence, and answer calls</p>
+                </div>
+                <div class="responsibility-item">
+                    <h4>🗂️ Document Organization</h4>
+                    <p>File, organize, and maintain document systems with meticulous attention to detail</p>
+                </div>
+                <div class="responsibility-item">
+                    <h4>🔍 Research & Support</h4>
+                    <p>Conduct internet research, compile reports, and provide project support</p>
+                </div>
+                <div class="responsibility-item">
+                    <h4>🚀 General Support</h4>
+                    <p>Handle office errands and provide administrative assistance as needed</p>
+                </div>
+            </div>
+
+            <h3>✅ Required Qualifications</h3>
+            <ul style="margin-left: 2rem; line-height: 2;">
+                <li>1-2+ years of administrative or personal assistant experience</li>
+                <li>Excellent organizational and time management skills</li>
+                <li>Strong attention to detail and accuracy</li>
+                <li>Proficiency with Microsoft Office and Google Suite</li>
+                <li>Professional communication skills (verbal & written)</li>
+                <li>Reliable, independent work ethic</li>
+                <li>Professional home workspace with reliable internet</li>
+                <li>US-based with legal authorization to work</li>
+            </ul>
+
+            <h3>🎁 Benefits Package</h3>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h4>💵 Competitive Pay</h4>
+                    <p>$125/hour</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>🏥 Medical Coverage</h4>
+                    <p>After 1 month</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>📈 401(k)</h4>
+                    <p>After 3 months</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>🛡️ AD & D Insurance</h4>
+                    <p>From day one</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>⏰ Flexible Hours</h4>
+                    <p>10-30 hours/week</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>🌍 Work Anywhere</h4>
+                    <p>100% Remote</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Section -->
+        <section id="apply">
+            <h2>Apply Now</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #666;">
+                Ready to join our team? Fill out the form below to submit your application. We'll review all applications and contact qualified candidates within 2-3 business days.
+            </p>
+
+            <div class="form-section">
+                <div id="successMessage" class="success-message">
+                    ✅ Application submitted successfully! We'll contact you within 2-3 business days.
+                </div>
+
+                <form id="applicationForm" onsubmit="handleSubmit(event)">
+                    <!-- Personal Information -->
+                    <div style="background: white; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem;">
+                        <h4 style="color: #667eea; margin-bottom: 1rem;">Personal Information</h4>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                            <div class="form-group">
+                                <label for="fullName">Full Name *</label>
+                                <input type="text" id="fullName" name="fullName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="location">Current Location (City, State) *</label>
+                                <input type="text" id="location" name="location" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="status">Are you currently a student or staff member? *</label>
+                            <select id="status" name="status" required>
+                                <option value="">-- Select --</option>
+                                <option value="student">Student</option>
+                                <option value="staff">Staff</option>
+                                <option value="professional">Professional</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="startDate">When can you start? *</label>
+                            <input type="date" id="startDate" name="startDate" required>
+                        </div>
+                    </div>
+
+                    <!-- Work Experience -->
+                    <div style="background: white; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem;">
+                        <h4 style="color: #667eea; margin-bottom: 1rem;">Work Experience</h4>
+                        
+                        <div class="form-group">
+                            <label for="experience">Years of Administrative Experience *</label>
+                            <select id="experience" name="experience" required>
+                                <option value="">-- Select --</option>
+                                <option value="0-1">0-1 year</option>
+                                <option value="1-3">1-3 years</option>
+                                <option value="3-5">3-5 years</option>
+                                <option value="5+">5+ years</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="relevantRole">Most Recent Relevant Position *</label>
+                            <input type="text" id="relevantRole" name="relevantRole" placeholder="e.g., Executive Assistant at ABC Corp" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="responsibilities">Describe Your Key Administrative Responsibilities *</label>
+                            <textarea id="responsibilities" name="responsibilities" placeholder="Tell us about your experience managing schedules, email, documents, etc." required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Technical Skills -->
+                    <div style="background: white; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem;">
+                        <h4 style="color: #667eea; margin-bottom: 1rem;">Technical Skills</h4>
+                        
+                        <p style="margin-bottom: 1rem; color: #666;">Rate your proficiency (1-5, with 5 being expert):</p>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div class="form-group">
+                                <label for="ms-office">Microsoft Office (Word, Excel, Outlook) *</label>
+                                <select id="ms-office" name="ms-office" required>
+                                    <option value="">-- Select --</option>
+                                    <option value="1">1 - Beginner</option>
+                                    <option value="2">2 - Basic</option>
+                                    <option value="3">3 - Intermediate</option>
+                                    <option value="4">4 - Advanced</option>
+                                    <option value="5">5 - Expert</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="google-suite">Google Suite (Docs, Sheets, Gmail) *</label>
+                                <select id="google-suite" name="google-suite" required>
+                                    <option value="">-- Select --</option>
+                                    <option value="1">1 - Beginner</option>
+                                    <option value="2">2 - Basic</option>
+                                    <option value="3">3 - Intermediate</option>
+                                    <option value="4">4 - Advanced</option>
+                                    <option value="5">5 - Expert</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-top: 1rem;">
+                            <label for="otherTools">Other Software/Tools You're Proficient With:</label>
+                            <textarea id="otherTools" name="otherTools" placeholder="e.g., Asana, Monday.com, QuickBooks, Slack, etc."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Availability -->
+                    <div style="background: white; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem;">
+                        <h4 style="color: #667eea; margin-bottom: 1rem;">Availability & Work Setup</h4>
+                        
+                        <div class="form-group">
+                            <label for="hoursPerWeek">How many hours per week can you work? *</label>
+                            <select id="hoursPerWeek" name="hoursPerWeek" required>
+                                <option value="">-- Select --</option>
+                                <option value="5-10">5-10 hours</option>
+                                <option value="10-20">10-20 hours</option>
+                                <option value="20-30">20-30 hours</option>
+                                <option value="30+">30+ hours</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="timezone">Your Time Zone *</label>
+                            <input type="text" id="timezone" name="timezone" placeholder="e.g., EST, PST, CST" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="workspace">Do you have a quiet, professional workspace at home? *</label>
+                            <select id="workspace" name="workspace" required>
+                                <option value="">-- Select --</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="internet">Approximate Internet Speed (Download Mbps) *</label>
+                            <input type="number" id="internet" name="internet" placeholder="e.g., 50" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="flexibility">Can you work flexibly if our needs change week to week? *</label>
+                            <select id="flexibility" name="flexibility" required>
+                                <option value="">-- Select --</option>
+                                <option value="very-flexible">Very Flexible</option>
+                                <option value="somewhat-flexible">Somewhat Flexible</option>
+                                <option value="limited-flexibility">Limited Flexibility</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Motivation -->
+                    <div style="background: white; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem;">
+                        <h4 style="color: #667eea; margin-bottom: 1rem;">Motivation & Goals</h4>
+                        
+                        <div class="form-group">
+                            <label for="motivation">Why are you interested in this position? *</label>
+                            <textarea id="motivation" name="motivation" placeholder="Tell us what attracts you to this role" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="careerGoals">What are your career goals? *</label>
+                            <textarea id="careerGoals" name="careerGoals" placeholder="Share your professional aspirations"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- References -->
+                    <div style="background: white; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem;">
+                        <h4 style="color: #667eea; margin-bottom: 1rem;">Professional References</h4>
+                        
+                        <p style="margin-bottom: 1rem; color: #666;">We'll contact your references to verify your experience. You can provide email or phone contact information.</p>
+                        
+                        <div style="border: 1px solid #ddd; padding: 1rem; border-radius: 5px; margin-bottom: 1rem;">
+                            <h5 style="color: #667eea; margin-bottom: 0.5rem;">Reference 1 *</h5>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                                <div class="form-group">
+                                    <label for="ref1Name">Name *</label>
+                                    <input type="text" id="ref1Name" name="ref1Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ref1Title">Title/Relationship *</label>
+                                    <input type="text" id="ref1Title" name="ref1Title" placeholder="e.g., Former Manager" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ref1Email">Email or Phone *</label>
+                                    <input type="text" id="ref1Email" name="ref1Email" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="border: 1px solid #ddd; padding: 1rem; border-radius: 5px;">
+                            <h5 style="color: #667eea; margin-bottom: 0.5rem;">Reference 2 *</h5>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                                <div class="form-group">
+                                    <label for="ref2Name">Name *</label>
+                                    <input type="text" id="ref2Name" name="ref2Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ref2Title">Title/Relationship *</label>
+                                    <input type="text" id="ref2Title" name="ref2Title" placeholder="e.g., Colleague" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ref2Email">Email or Phone *</label>
+                                    <input type="text" id="ref2Email" name="ref2Email" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Info -->
+                    <div style="background: white; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem;">
+                        <h4 style="color: #667eea; margin-bottom: 1rem;">Additional Information</h4>
+                        
+                        <div class="form-group">
+                            <label for="additionalInfo">Anything else you'd like us to know?</label>
+                            <textarea id="additionalInfo" name="additionalInfo" placeholder="Optional: Share any additional relevant information"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" name="agreeTerms" required>
+                                I certify that all information provided is true and accurate. I understand that false information may result in disqualification or termination.
+                            </label>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn btn-primary" style="font-size: 1.1rem; padding: 15px 40px;">
+                            Submit Application
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do I need previous administrative experience?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We prefer 1-2+ years of relevant experience, but we value strong organizational skills and willingness to learn. If you have excellent time management and attention to detail, we encourage you to apply!</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Is this position truly remote?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! This is 100% remote. You can work from home, a coffee shop, school, or anywhere with a reliable internet connection. We only require that you have a quiet, professional workspace during work hours.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can I work part-time while in school?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! This position is designed with flexibility in mind. Many of our ideal candidates are students looking to build professional experience while managing their coursework. Work 5-30 hours per week—your choice!</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What's the application timeline?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Here's our typical timeline: (1) Submit application, (2) Initial review: 2-3 business days, (3) Phone interview: within 1 week if selected, (4) Formal interview: if applicable, (5) Offer and onboarding: immediate upon acceptance.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>When do benefits start?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Medical coverage becomes available after 1 month of employment (includes a pay increase), and 401(k) eligibility begins after 3 months (also includes a pay increase). AD & D Insurance is available from day one.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What software do I need to know?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Proficiency with Microsoft Office (Word, Excel, Outlook) and/or Google Suite (Docs, Sheets, Gmail) is essential. We'll teach you any specific tools we use. We value your ability to learn quickly more than your previous experience with niche software.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can I increase my hours after starting?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! Many employees start part-time and later increase their hours as they become more familiar with the role and our needs align. Flexibility goes both ways.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do you hire contractors or employees?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We work with both W-2 employees and independent contractors (1099). This will be determined during the offer stage based on your needs and our requirements.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What if I have more questions before applying?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Great question! You can email us with any questions before submitting your application. We're happy to clarify anything about the position, requirements, or process.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
+                    Have questions? We'd love to hear from you! Reach out through any of these channels.
+                </p>
+
+                <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px;">
+                    <h3 style="color: #667eea; margin-bottom: 1.5rem;">Contact Information</h3>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <p style="font-weight: 600; margin-bottom: 0.5rem;">📧 Email</p>
+                        <p><a href="mailto:admin@formassistantcare.com" style="color: #667eea; text-decoration: none;">admin@formassistantcare.com</a></p>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <p style="font-weight: 600; margin-bottom: 0.5rem;">📱 Phone</p>
+                        <p><a href="tel:+1-555-0123" style="color: #667eea; text-decoration: none;">+1 (555) 0123</a></p>
+                    </div>
+
+                    <div>
+                        <p style="font-weight: 600; margin-bottom: 0.5rem;">⏰ Response Time</p>
+                        <p>We typically respond to inquiries within 24 business hours.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem; padding: 1.5rem; background: #e9ecef; border-radius: 10px;">
+                    <p style="color: #666;">
+                        <strong>Ready to apply?</strong> Click the "Apply Now" button above to get started. We're excited to meet you!
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 FormAssistantCare. All rights reserved.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms of Service</a> | 
+            <a href="#">Contact Us</a>
+        </p>
+    </footer>
+
+    <script>
+        // Toggle FAQ
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('span:last-child');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-answer').forEach(a => {
+                if (a !== answer) {
+                    a.classList.remove('show');
+                }
+            });
+            
+            document.querySelectorAll('.faq-question span:last-child').forEach(i => {
+                if (i !== icon) {
+                    i.textContent = '+';
+                }
+            });
+
+            // Toggle current FAQ
+            answer.classList.toggle('show');
+            icon.textContent = answer.classList.contains('show') ? '−' : '+';
+        }
+
+        // Handle Form Submission
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            // Collect form data
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+
+            // In a real application, you would send this to a server
+            // For now, we'll show a success message and log the data
+            console.log('Application Data:', data);
+
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Reset form
+            event.target.reset();
+
+            // Scroll to success message
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
